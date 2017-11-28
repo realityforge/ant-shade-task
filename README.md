@@ -2,21 +2,20 @@
 
 `ant-shade-task` is a port of [Apache Maven](https://maven.apache.org/) [Shade Plugin](https://maven.apache.org/plugins/maven-shade-plugin/) (or `maven-shade-plugin`) for [Ant](http://ant.apache.org/).
 
-## Requirements
+## How to build
 
-* Use: Java 8 and Apache Ant.
-* Build: Java 8 and Apache Maven.
+There is a simple ruby script that orchestrates the build into a local directory `dist`. First you update the version
+number in the `pom.xml` if required and then you run `./build.rb` and it will build artifacts into `dist` directory
+and these can be uploaded to Maven Central or another artifact repository as required.
 
 ## How to use
 
-* Build with `mvn clean package`.
-* Pick `ant-shade-task-0.1-SNAPSHOT.jar` or `ant-shade-task-0.1-SNAPSHOT-jar-with-dependencies.jar` from the `target` directory and copy it to elsewhere.
 * Register the picked up JAR file in `build.xml`:
 
 ```xml
 <taskdef
-	classpath="ant-shade-task-0.1-SNAPSHOT-jar-with-dependencies.jar"
-	resource="org/apache/tools/ant/taskdefs/shade.properties"
+	classpath="ant-shade-task-VERSION.jar"
+	resource="org/realityforge/ant/shade/shade.properties"
 />
 ```
 
