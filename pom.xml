@@ -10,6 +10,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <github.maven.repository>file://${project.build.directory}/output</github.maven.repository>
   </properties>
 
   <dependencies>
@@ -62,4 +63,10 @@
       </plugin>
     </plugins>
   </build>
+  <distributionManagement>
+    <repository>
+      <id>maven-repository</id>
+      <url>${github.maven.repository}</url>
+    </repository>
+  </distributionManagement>
 </project>
