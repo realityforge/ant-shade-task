@@ -45,6 +45,30 @@ The snippet above is an Ant adaptation of the following Maven Shade Plugin confi
 </relocations>
 ```
 
+### How to use in Apache Buildr
+
+Apache Buildr can make use of ant tasks. An example that shades an existing jar in Apache Buildr is:
+
+```ruby
+package(:jar).enhance do |jar|
+  jar.merge(artifact(:javapoet))
+  jar.merge(artifact(:guava))
+  jar.enhance do |f|
+    shaded_jar = (f.to_s + '-shaded')
+    Buildr.ant 'shade_jar' do |ant|
+      artifact = Buildr.artifact(:shade_task)
+      artifact.invoke
+      ant.taskdef :name => 'shade', :classname => 'org.realityforge.ant.shade.Shade', :classpath => artifact.to_s
+      ant.shade :jar => f.to_s, :uberJar => shaded_jar do
+        ant.relocation :pattern => 'com.squareup.javapoet', :shadedPattern => 'react4j.processor.vendor.javapoet'
+        ant.relocation :pattern => 'com.google', :shadedPattern => 'react4j.processor.vendor.google'
+      end
+    end
+    FileUtils.mv shaded_jar, f.to_s
+  end
+end
+```
+
 ## What's supported
 
 * Only `<relocations>` are exposed through the `<shade>` task so far.
