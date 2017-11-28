@@ -50,10 +50,6 @@ The snippet above is an Ant adaptation of the following Maven Shade Plugin confi
 
 * Only `<relocations>` are exposed through the `<shade>` task so far.
 
-## Known issues
-
-* `ant-shade-task-0.1-SNAPSHOT.jar` does not include any dependencies and the dependencies should be picked up either manually or using `ant-shade-task-0.1-SNAPSHOT-jar-with-dependencies.jar` that's currently large (about 8.7MB).
-
 ## Credit
 
 This is simply a re-packaging of [lyubomyr-shaydariv/ant-shade-task](https://github.com/lyubomyr-shaydariv/ant-shade-task)
