@@ -54,11 +54,6 @@ What's supported
 
 * Only `<relocations>` are exposed through the `<shade>` task so far.
 
-Version history
-===
-
-Nothing tagged yet.
-
 Known issues
 ===
 
