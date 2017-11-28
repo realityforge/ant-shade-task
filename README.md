@@ -63,4 +63,3 @@ Known issues
 ===
 
 * `ant-shade-task-0.1-SNAPSHOT.jar` does not include any dependencies and the dependencies should be picked up either manually or using `ant-shade-task-0.1-SNAPSHOT-jar-with-dependencies.jar` that's currently large (about 8.7MB).
-* Not a part of the standard Apache Ant taskdef library, but occupies the `org.apache.tools.ant.taskdefs.Shade` class, and probably should be moved to another non-Apache package.

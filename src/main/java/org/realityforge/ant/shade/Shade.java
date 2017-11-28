@@ -1,4 +1,4 @@
-package org.apache.tools.ant.taskdefs;
+package org.realityforge.ant.shade;
 
 import java.io.File;
 import java.io.IOException;
