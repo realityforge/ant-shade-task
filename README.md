@@ -14,8 +14,8 @@ and these can be uploaded to Maven Central or another artifact repository as req
 
 ```xml
 <taskdef
-	classpath="ant-shade-task-VERSION.jar"
-	resource="org/realityforge/ant/shade/shade.properties"
+  classpath="ant-shade-task-VERSION.jar"
+  resource="org/realityforge/ant/shade/shade.properties"
 />
 ```
 
@@ -23,10 +23,10 @@ and these can be uploaded to Maven Central or another artifact repository as req
 
 ```xml
 <shade jar="foo-bar.jar" uberJar="foo-bar-shaded.jar">
-	<relocation pattern="org.codehaus.plexus.util" shadedPattern="org.shaded.plexus.util">
-		<exclude value="org.codehaus.plexus.util.xml.Xpp3Dom"/>
-		<exclude value="org.codehaus.plexus.util.xml.pull.*"/>
-	</relocation>
+  <relocation pattern="org.codehaus.plexus.util" shadedPattern="org.shaded.plexus.util">
+    <exclude value="org.codehaus.plexus.util.xml.Xpp3Dom"/>
+    <exclude value="org.codehaus.plexus.util.xml.pull.*"/>
+  </relocation>
 </shade>
 ```
 
@@ -34,14 +34,14 @@ The snippet above is an Ant adaptation of the following Maven Shade Plugin confi
 
 ```xml
 <relocations>
-	<relocation>
-	<pattern>org.codehaus.plexus.util</pattern>
-		<shadedPattern>org.shaded.plexus.util</shadedPattern>
-		<excludes>
-			<exclude>org.codehaus.plexus.util.xml.Xpp3Dom</exclude>
-			<exclude>org.codehaus.plexus.util.xml.pull.*</exclude>
-		</excludes>
-	</relocation>
+  <relocation>
+  <pattern>org.codehaus.plexus.util</pattern>
+    <shadedPattern>org.shaded.plexus.util</shadedPattern>
+    <excludes>
+      <exclude>org.codehaus.plexus.util.xml.Xpp3Dom</exclude>
+      <exclude>org.codehaus.plexus.util.xml.pull.*</exclude>
+    </excludes>
+  </relocation>
 </relocations>
 ```
 
